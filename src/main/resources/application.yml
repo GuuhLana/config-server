@@ -3,6 +3,12 @@ server:
 spring:
   application:
     name: config-server
-  profiles:
-    active:
-    - native
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/GuuhLana/course-config-microservices
+          default-label: master
+          search-paths:
+          - 'greeting-service*'
+    
